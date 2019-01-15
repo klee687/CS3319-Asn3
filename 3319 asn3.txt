@@ -1,0 +1,46 @@
+Assignment 3
+Purpose
+
+    To give you exposure to
+        creating a program that
+            connects to a database
+            writes, reads and updates the data in the database
+        writing the interface between a database and a user
+        creating a client/server program that runs on the internet, serves up a page that runs on the client side (the users browser) and also connects to a back end database on the server side (your virtual machine)
+
+Instructions
+
+MAKE SURE YOU PUT ALL YOUR CODE IN A SUBFOLDER OF html called assignment3 AND MAKE SURE YOU SET THE PERMISSIONS AS FOLLOWS ON YOUR cs3319.gaul.csd.uwo.ca SITE:
+
+cd ~
+cd html
+mkdir assignment3
+chmod 750 assignment3
+
+Put all your code in assignment3 folder and subfolders of assignment3. Your URL will then be:
+http://cs3319.gaul.csd.uwo.ca/yourwesternid/assignment3
+
+Make sure all your files in the assignment3 directory have a permission of 644 (to do this, inside your assignment3 folder do this command):
+chmod 640 filename.php
+chmod 750 anysubdirectoriesthatyoumakeinassignment3folder
+
+Using the database you created for assignment 2, PHP and Postgres,, create a website  that allows someone to update the hockey teams, games and officials. 
+
+    List all Teams (every field) in alphabetical order by team name and list all the teams in alphabetical order by team city. Allow the user to pick which order to use. 
+    Insert a New Team: (Prompt for the necessary data) Note: Send an error message if they try to insert an existing team id number (or dont allow them to enter this field but generate it somehow). 
+    Delete an Existing Team  (Prompt for the team id to delete) Note: Send a warning message if they try to delete a non existing team id number (or somehow set up your front end so that it is not possible for them to delete a team that doesn't exist)
+    Update the name of the city that a game was played in (prompt the user for the game id, tell them the current city before prompting them for the new city) Note: Send an error message if the user doesn't enter a valid game id (or dont allow them to pick invalid game ids).
+    Let the user to pick a game id and output the teams (city and team name) that played in that game, each teams score, the city the game took place and the date of the game and the officials names and highlight the head official somehow.  Also somehow highlight the winning team. If a the user doesn't supply a valid game id, give an error message (or dont allow the user to enter this field, instead let them pick from a drop down box)
+    List the officials in order by last name.
+    The Maple Leafs have a curse on them and are wondering if it is because of the officials. Allow a user pick one of the following items to display
+        show the scores for all the games that the Leafs played in and their opponents name and city.
+        show the name of the official who has officiated the most Leafs games
+        show the name of the official who had officiated the most Leaf losses
+        show the name of the official who has officiated the most Leaf wins. 
+    Bonus (worth 2%): add an extra field to the officials table called officialimage (you can do this right in postgres, not using php code, make it char(100)). Allow the user to click on one of the officials and if this field is null then let the user find an image online and add the url to the officials table AND display the image in your user interface. If the field is not null, display the image at the url.. 
+
+It is a good habit to disconnect from a database once you have finished using it, make sure you program disconnects from the database. 
+
+Remember that PHP can get large and cluttered, your application will be marked partly on your structure, comments and modularity, don't put everything in one file, try using PHP includes and separate files to break up the PHP code.
+
+NOTE: you cannot use any third party DAL frameworks that let you avoid writing SQL queries/statements. We want you get experience writing SQL with this assignment
